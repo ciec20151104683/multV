@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,
+    UIImagePickerControllerDelegate,
+UINavigationControllerDelegate{
 
     @IBOutlet weak var Mmenu: UITextField!
     @IBOutlet weak var peopleA: UIImageView!
@@ -18,8 +20,30 @@ class ViewController: UIViewController {
     var flagA=0
     var flagB=0
     @IBAction func CHphoto(_ sender: Any) {
+        if peopleA.image == nil && peopleB.image != nil {
+            let alertController = UIAlertController(title:"系统提示",
+                                                    message:"请先上传选手A照片：\n",
+                                                    preferredStyle:. alert)
+            
+            
+            //显示显示框
+            self.present(alertController,animated: true,completion: nil)
+            let okAction = UIAlertAction(title: "",style: .default,handler:{
+                action in
+                print("")
+            })
+            alertController.addAction(okAction)
+            //5秒钟后自动消失
+            DispatchQueue.main.asyncAfter(deadline:DispatchTime.now() + 5) {
+                self.presentedViewController?.dismiss(animated: false, completion: nil)
+            }
+        }
         
     }
+
+
+
+
     @IBAction func A(_ sender: Any) {
         if dlg==0{
             flagA=1
