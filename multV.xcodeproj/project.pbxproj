@@ -18,6 +18,7 @@
 		7265F2981ED524C400D5C544 /* 场地｀.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7265F2971ED524C400D5C544 /* 场地｀.jpg */; };
 		7265F29A1ED524CC00D5C544 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7265F2991ED524CC00D5C544 /* 12.jpg */; };
 		7265F29C1ED524D600D5C544 /* 13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7265F29B1ED524D600D5C544 /* 13.jpg */; };
+		728FA9941EFBB32E00B42842 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 728FA9931EFBB32E00B42842 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		7265F2971ED524C400D5C544 /* 场地｀.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "场地｀.jpg"; path = "../../场地｀.jpg"; sourceTree = "<group>"; };
 		7265F2991ED524CC00D5C544 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 12.jpg; path = ../../12.jpg; sourceTree = "<group>"; };
 		7265F29B1ED524D600D5C544 /* 13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 13.jpg; path = ../../13.jpg; sourceTree = "<group>"; };
+		728FA9931EFBB32E00B42842 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		728FA9951EFBB38A00B42842 /* SQLite-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SQLite-Bridge.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				728FA9941EFBB32E00B42842 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,10 +89,12 @@
 		724B51621ED290D1006398EA = {
 			isa = PBXGroup;
 			children = (
+				728FA9951EFBB38A00B42842 /* SQLite-Bridge.h */,
 				724B516D1ED290D1006398EA /* multV */,
 				724B51821ED290D1006398EA /* multVTests */,
 				724B518D1ED290D1006398EA /* multVUITests */,
 				724B516C1ED290D1006398EA /* Products */,
+				728FA9921EFBB32E00B42842 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +141,14 @@
 				724B51901ED290D1006398EA /* Info.plist */,
 			);
 			path = multVUITests;
+			sourceTree = "<group>";
+		};
+		728FA9921EFBB32E00B42842 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				728FA9931EFBB32E00B42842 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +458,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = swift.multV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "SQLite-Bridge.h”";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
